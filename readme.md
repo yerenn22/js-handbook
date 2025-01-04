@@ -1,41 +1,41 @@
-# Парадигмы программирования
+# Programming Paradigms
 
-### **1. Основные модели программирования**
+### **1. Major Programming Models**
 
-| **Модель**                                          | **Описание**                                                                    | **Ключевые признаки**                                             | **Пример**                                                  |
-|-----------------------------------------------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------|
-| **Императивное программирование**                   | Код описывает **последовательность шагов** для выполнения задачи.               | Циклы, условия, пошаговый подход, изменяемые данные.              | `for (let i = 0; i < arr.length; i++) { sum += arr[i]; }`   |
-| **Декларативное программирование**                  | Код описывает **что нужно сделать**, а не как.                                  | `map`, `filter`, SQL, React (JSX), минимизация побочных эффектов. | `const sum = arr.reduce((acc, val) => acc + val, 0);`       |
-| **Структурное программирование**                    | Код организован в логические блоки: последовательность, ветвления, циклы.       | Разделение на функции, циклы вместо `goto`.                       | `if (x > 0) { doSomething(); } else { doSomethingElse(); }` |
-| **Функциональное программирование**                 | Код строится на функциях, избегает мутаций и побочных эффектов.                 | Чистые функции, композиция, каррирование, `map`, `reduce`.        | `const squared = arr.map(x => x ** 2);`                     |
-| **Логическое программирование**                     | Описываются правила и факты, а не алгоритмы. Решение ищется логическим выводом. | Используется в Prolog, реляционные базы данных.                   | `man(X) :- human(X), male(X).`                              |
-| **Объектно-ориентированное программирование (ООП)** | Код организован вокруг объектов, их состояния и методов.                        | Классы, инкапсуляция, наследование, полиморфизм.                  | `class Animal { speak() { console.log("Sound"); } }`        |
-| Компонентно-ориентированное программирование	      | Код строится из независимых и переиспользуемых компонентов.	                    | Используется в React, Angular, Vue.	                            | `<Button text="Click me" />`                                |
-
-
-### **2. Подходы и приёмы**
-
-| **Подход/Приём**                                 | **Описание**                                                                | ** Исходит от **               | **Пример**                                                                                              |
-|--------------------------------------------------|-----------------------------------------------------------------------------|--------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Структурное программирование**                 | Разделение кода на блоки: последовательность, ветвления, циклы.             | -                              | `if (x > 0) { doSomething(); } else { doSomethingElse(); }`                                             |
-| **Процедурное программирование**                 | Разделение программы на процедуры/функции для повторного использования.     | Императивное программирование  | `function greet() { console.log('Hello!'); } greet();`                                                  |
-| **Аппликативное программирование**               | Использование функций высшего порядка и композиции.                         | Декларативное программирование | `const squaredSum = compose(square, sum);`                                                              |
-| **Обобщённое программирование**                  | Использование универсальных решений, подходящих для разных типов данных.    | -                              | Дженерики в TypeScript: `function identity<T>(arg: T): T { return arg; }`                               |
-| **Рекурсия**                                     | Функция вызывает саму себя.                                                 | -                              | `function factorial(n) { return n === 1 ? 1 : n * factorial(n - 1); }`                                  |
-| **Автоматное программирование**                  | Организация логики через конечные автоматы.                                 | -                              | `state = 'idle'; if (event === 'click') state = 'active';`                                              |
-| **Событийно-ориентированное программирование**   | Код реагирует на события.                                                   | -                              | `document.addEventListener('click', () => console.log('Clicked!'));`                                    |
-| **Компонентно-ориентированное программирование** | Код строится из независимых компонентов.                                    | -                              | `<Header title="Welcome" />` в React.                                                                   |
-| **Грамотное программирование**                   | Программа — это повествование, где текст и код переплетены для пояснения.   | -                              | Текст описывает, зачем нужен код, а затем идёт его реализация. Пример: Jupyter Notebook.                |
+| **Model**                                         | **Description**                                                                    | **Key Features**                                                   | **Example**                                                    |
+|--------------------------------------------------|------------------------------------------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------|
+| **Imperative Programming**                       | Code describes a **sequence of steps** to accomplish a task.                      | Loops, conditions, step-by-step approach, mutable data.            | `for (let i = 0; i < arr.length; i++) { sum += arr[i]; }`     |
+| **Declarative Programming**                      | Code describes **what needs to be done**, not how.                                | `map`, `filter`, SQL, React (JSX), minimizing side effects.        | `const sum = arr.reduce((acc, val) => acc + val, 0);`         |
+| **Structured Programming**                       | Code is organized into logical blocks: sequence, branching, loops.                | Function division, loops instead of `goto`.                        | `if (x > 0) { doSomething(); } else { doSomethingElse(); }`   |
+| **Functional Programming**                       | Code is built around functions, avoiding mutations and side effects.              | Pure functions, composition, currying, `map`, `reduce`.            | `const squared = arr.map(x => x ** 2);`                       |
+| **Logic Programming**                            | Focuses on rules and facts rather than algorithms. Solutions are inferred logically. | Used in Prolog, relational databases.                              | `man(X) :- human(X), male(X).`                                |
+| **Object-Oriented Programming (OOP)**            | Code is organized around objects, their state, and methods.                       | Classes, encapsulation, inheritance, polymorphism.                 | `class Animal { speak() { console.log("Sound"); } }`          |
+| **Component-Oriented Programming**               | Code is built from independent and reusable components.                           | Used in React, Angular, Vue.                                       | `<Button text="Click me" />`                                  |
 
 
-### **3. Ключевые термины**
+### **2. Approaches and Techniques**
 
-| **Термин**                         | **Описание**                                                                             | **Пример**                                            |
-|------------------------------------|------------------------------------------------------------------------------------------|-------------------------------------------------------|
-| **Чистая функция (Pure Function)** | Функция, которая не изменяет внешние данные и всегда возвращает один и тот же результат. | `const add = (a, b) => a + b;`                        |
-| **Мутация данных**                 | Изменение данных "на месте".                                                             | `arr.push(4); // изменяет массив`                     |
-| **Неизменяемость (Immutability)**  | Вместо изменения данных создаются новые копии.                                           | `const newArr = [...arr, 4]; // создаёт новый массив` |
-| **Каррирование (Currying)**        | Преобразование функции в цепочку вызовов с одним аргументом.                             | `multiply(2)(3); // 6`                                |
-| **Композиция функций**             | Объединение функций в одну большую.                                                      | `compose(f1, f2, f3)(data);`                          |
-| **Идёмпотентность**                | Операция, которую можно повторять без изменения результата.                              | `Math.abs(-10);`                                      |
-| **Побочный эффект (Side Effect)**  | Любое изменение вне функции: лог, изменение глобального состояния.                       | `console.log('Logging something');`                   |
+| **Approach/Technique**                          | **Description**                                                               | **Derived from**                | **Example**                                                                                            |
+|-------------------------------------------------|-------------------------------------------------------------------------------|---------------------------------|--------------------------------------------------------------------------------------------------------|
+| **Structured Programming**                      | Divides code into blocks: sequence, branching, loops.                         | -                               | `if (x > 0) { doSomething(); } else { doSomethingElse(); }`                                            |
+| **Procedural Programming**                      | Divides programs into procedures/functions for reuse.                         | Imperative Programming          | `function greet() { console.log('Hello!'); } greet();`                                                 |
+| **Applicative Programming**                     | Uses higher-order functions and composition.                                  | Declarative Programming         | `const squaredSum = compose(square, sum);`                                                             |
+| **Generic Programming**                         | Uses universal solutions suitable for various data types.                     | -                               | Generics in TypeScript: `function identity<T>(arg: T): T { return arg; }`                              |
+| **Recursion**                                   | A function calls itself.                                                      | -                               | `function factorial(n) { return n === 1 ? 1 : n * factorial(n - 1); }`                                 |
+| **State Machine Programming**                   | Organizes logic using finite state machines.                                  | -                               | `state = 'idle'; if (event === 'click') state = 'active';`                                             |
+| **Event-Driven Programming**                    | Code reacts to events.                                                        | -                               | `document.addEventListener('click', () => console.log('Clicked!'));`                                   |
+| **Component-Oriented Programming**              | Code is built from independent components.                                    | -                               | `<Header title="Welcome" />` in React.                                                                |
+| **Literate Programming**                        | Code is intertwined with text explaining its purpose.                         | -                               | A narrative description is followed by its implementation, e.g., Jupyter Notebook.                     |
+
+
+### **3. Key Terms**
+
+| **Term**                         | **Description**                                                                             | **Example**                                            |
+|-----------------------------------|--------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| **Pure Function**                 | A function that does not modify external data and always returns the same result.          | `const add = (a, b) => a + b;`                        |
+| **Data Mutation**                 | Changing data "in place."                                                                  | `arr.push(4); // modifies the array`                  |
+| **Immutability**                  | Instead of modifying data, new copies are created.                                         | `const newArr = [...arr, 4]; // creates a new array`  |
+| **Currying**                      | Transforming a function into a chain of calls with single arguments.                       | `multiply(2)(3); // 6`                                |
+| **Function Composition**          | Combining functions into one larger function.                                              | `compose(f1, f2, f3)(data);`                          |
+| **Idempotence**                   | An operation that can be repeated without changing the result.                             | `Math.abs(-10);`                                      |
+| **Side Effect**                   | Any change outside the function: logging, modifying global state.                          | `console.log('Logging something');`                   |
