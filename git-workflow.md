@@ -208,7 +208,54 @@ git push origin release/1.0.0
 
 ---
 
-## 9. Example Commit Log
+## 9. Hotfix Workflow
+
+### Creating a Hotfix Branch:
+If a critical issue is identified in the `main` branch:
+```bash
+git checkout main
+git pull origin main
+git checkout -b hotfix/fix-critical-bug
+```
+
+### Fix the Issue:
+1. Apply the necessary fixes.
+2. Commit the changes:
+   ```bash
+   git add .
+   git commit -m "fix: resolve critical issue affecting production"
+   ```
+
+3. Push the branch:
+   ```bash
+   git push origin hotfix/fix-critical-bug
+   ```
+
+### Merging the Hotfix:
+1. Merge the hotfix into `main`:
+   ```bash
+   git checkout main
+   git merge --no-ff hotfix/fix-critical-bug
+   git push origin main
+   ```
+
+2. Merge the hotfix into `develop`:
+   ```bash
+   git checkout develop
+   git pull origin develop
+   git merge --no-ff hotfix/fix-critical-bug
+   git push origin develop
+   ```
+
+3. Delete the hotfix branch:
+   ```bash
+   git branch -d hotfix/fix-critical-bug
+   git push origin --delete hotfix/fix-critical-bug
+   ```
+
+---
+
+## 10. Example Commit Log
 
 ```plaintext
 feat: add login form ui
@@ -219,5 +266,6 @@ feat: add basic functionality for the signup form
 test: add tests for signup form validation
 fix: resolve error on empty signup form submission
 docs: add instructions for using the signup form
+fix: resolve critical issue affecting production
 chore: version 1.0.0
 ```
