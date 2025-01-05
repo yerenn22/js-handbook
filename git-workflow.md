@@ -151,7 +151,7 @@ git push origin feature/add-signup-form
 ### Alice:
 Create a PR from the branch `feature/add-login-form` to `development` with the following description:
 ```plaintext
-feat: added login functionality
+feat: add login functionality
 
 Added a login form with data validation and a basic UI.
 Fixed validation errors and optimized data processing logic.
@@ -160,7 +160,7 @@ Fixed validation errors and optimized data processing logic.
 ### Bob:
 Create a PR from the branch `feature/add-signup-form` to `development` with the following description:
 ```plaintext
-feat: added signup functionality
+feat: add signup functionality
 
 Implemented basic signup form functionality, added tests, and updated documentation.
 Resolved issues related to empty form submissions.
